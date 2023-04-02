@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tabelka sum</title>
+    <script>
+        // my mielismy cos takiego na kartkowce ze byly dwa inputy i przycisk, ktory wywoluje funkcje sumujaca liczby z inputow i dodaje do tabelki
+        // tabelka z taka historia obliczen jakby
+        // i jeszcze suma sum z tej tabelki
+
+        let poprzedniaSuma = 0;
+        function przycisk() {
+
+            // document.getElementById("bla-bla-bla") zwróci nam element o id w HTMLu "bla-bla-bla"
+            // przykładowy zwrot takiego polecenia to: <div id="wyniki">bla-bla</div>
+            // jeśli w HTML mamy kod:
+            // <div id="wyniki">
+            //     bla-bla
+            // </div>
+
+            // .value oznacza nam wartość value w tym elemencie, by pozyskać ID moglibyśmy użyć .id
+            // Generalnie to ".x" oznacza jakąś wartość wpisaną w nawiasach obok nazwy tagu <div x="hehe" y="huehue">
+            // .x zwróci "hehe", y zwróci "huehue" itd.
+            let a = document.getElementById("a").value;
+            let b = document.getElementById("b").value;
+
+
+            // używamy Number() w przypadku gdyby ktoś nie zwrócił nam liczby
+            let suma = Number(a) + Number(b);
+
+            // tutaj uzyskujemy znowu element przez ID wyniki
+            let tabelka = document.getElementById("wyniki");
+
+
+            // <div id="smieszki">
+            //     <p>Hehe</p>
+            //     <p>Huehue</p>
+            // </div>
+            // .innerHTML poniższego kodu zwróci nam:
+            // <p>Hehe</p>
+            // <p>Huehue</p>
+            // czyli wszystko co jest wewnątrz diva o id smieszki
+            // jeśli div jest pusty, zwróci nam ewentualną spację pomiędzy tagami
+
+            // += tutaj, pozwala nam dodać coś w środku diva o ID wyniki
+            // dodajemy tutaj w środku kolejnego diva, który zawiera a, b i sumę z a+b
+            // dodatkowo przedzielamy to pionową linią dla wyglądu
+            tabelka.innerHTML += "<div>" + a + " | " + b + " | " + suma + "</div>";
+
+
+            // podobna sytuacja jak wcześniej, uzyskujemy element przez ID
+            let sumaSum = document.getElementById("suma-sum");
+
+            // poprzedniaSuma zadeklarowaliśmy przed funkcją (!!!) by nie resetowała się jego wartość przy każdym uruchomieniu funkcji
+            // dodajemy sumę do poprzedniejSume, to tak jakbyśmy napisali
+            // poprzedniaSuma = poprzedniaSuma + suma;
+            poprzedniaSuma += suma;
+
+            // Tutaj edytujemy polę z poprzednią sumą
+            sumaSum.innerHTML = poprzedniaSuma;
+        }
+
+        // ---------------------------------------------
+        // ---------------------------------------------
+        // ---------------------------------------------
+        // ---------------------------------------------
+        // ---------------------------------------------
+
+        let poprzedniaSuma2 = 0;
+        function przycisk2() {
+            let a = document.getElementById("a2").value;
+            let b = document.getElementById("b2").value;
+
+            let suma = Number(a) + Number(b);
+            
+            // należy pamiętać że tutaj uzyskujemy element który zawiera wszystkie wiersze tabeli, a nie sam wiersz bezpośrednio
+            let tabelka = document.getElementById("table-body");
+
+            // tutaj podobna sytuacja co w poprzedniej funkcji, ale dodajemy po prostu to tak jak nowe linijki w tabelce
+            tabelka.innerHTML += "<tr><td>" + a + "</td><td>" + b + "</td><td>" + suma + "</td></tr>";
+
+            let sumaSum = document.getElementById("suma-sum-tabela");
+            poprzedniaSuma2 += suma;
+            sumaSum.innerHTML = poprzedniaSuma2;
+        }
+
+        // ---------------------------------------------
+        // ---------------------------------------------
+        // ---------------------------------------------
+        // ---------------------------------------------
+        // ---------------------------------------------
+
+        function przycisk3() {
+            let przycisk = document.getElementById("przycisk3");
+
+            // Add - dodaje klasę przy naciśnięciu przycisku, jeśli ją ma, nic nie robi.
+            przycisk.classList.add("clicked-once")
+
+            // Toggle - przełącznik. Jeśli ma, usuwa. Jeśli nie ma, dodaje.
+            przycisk.classList.toggle("toggled");
+
+            // Remove - usuwa klasę przy naciśnięciu przycisku, jeśli jej nie ma, nic nie robi.
+            przycisk.classList.remove("not-clicked")
+
+            // Pogrubia czcionkę
+            // Należy pamiętać że wszelkie tagi CSS z myślnikiem, pisze się razem, a drugi wyraz jest z WIELKIEJ litery
+            // font-weight to fontWeight !!!
+            przycisk.style.fontWeight = "bold";
+        }
+    </script>
+
+    <style>
+        .clicked-once {
+            background-color: red;
+        }
+
+        .toggled {
+            color: blue;
+        }
+
+        .not-clicked {
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+
+    <form>
+        <input type="number" id="a">
+        <input type="number" id="b">
+    </form>
+
+    <button id="przycisk" onClick="przycisk()">Przycisk</button>
+
+    <div>A | B | Suma</div>
+    <div id="wyniki">
+    </div>
+    <div>Suma sum - <span id="suma-sum">0</span></div>
+    
+    <!-- -------------------------------- -->
+    <hr>
+    <!-- -------------------------------- -->
+
+    <form>
+        <input type="number" id="a2">
+        <input type="number" id="b2">
+    </form>
+
+    <button id="przycisk2" onClick="przycisk2()">Przycisk 2</button>
+
+    <table>
+        <thead>
+            <tr>
+                <th>A</th>
+                <th>B</th>
+                <th>Suma</th>
+            </tr>
+        </thead>
+        <tbody id="table-body">
+
+        </tbody>
+
+        <tfoot>
+            <tr>
+                <td>Suma sum</td>
+                <td></td>
+                <td id="suma-sum-tabela"></td>
+            </tr>
+        </tfoot>
+    </table>
+
+    <!-- -------------------------------- -->
+    <hr>
+    <!-- -------------------------------- -->
+
+    <h2>Prezentacja "this" w funkcji</h2>
+    <p>Kliknięcie przycisku zmieni mu klasy następująco:</p>
+    <p>Jeśli nie był jeszcze kliknięty - tło jest zielone.</p>
+    <p>Jeśli został chociaż raz kliknięty - tło będzie czerwone, czcionka pogrubiona.</p>
+    <p>Kliknięcie przycisku przełączy kolor tekstu na niebieski (toggle)</p>
+
+    <button id="przycisk3" name="przycisk3" class="not-clicked" onclick="przycisk3()">Przycisk</button>
+
+</body>
+</html>

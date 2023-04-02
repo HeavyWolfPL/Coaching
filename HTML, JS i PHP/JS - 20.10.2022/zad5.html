@@ -1,0 +1,33 @@
+<html>
+
+<head>
+    <script>
+
+        function policz(a, b){
+            let liczby = 0;
+            let tablica = []
+            for(let i=a; i<=b; i++){
+                tablica.push(i)
+            }
+            return tablica;
+        }
+
+        function suma(){
+            let suma = 0;
+            // arguments = [[funkcja policz], ..., ...]
+            let tablica = arguments[0]
+            for(let i = tablica[0]; i <= tablica.length; i++){
+                suma += i
+            }
+            return suma;
+        }
+
+        document.write(suma(policz(1,5)))
+        
+    </script>
+</head>
+
+
+<body>
+</body>
+</html>

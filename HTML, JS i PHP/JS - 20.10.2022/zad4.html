@@ -1,0 +1,32 @@
+<html>
+
+<head>
+
+    <script>
+
+        function sumaSzescianow(a, b){
+            let maks = 0;
+            let suma = 0;
+            for(i=a; i<=b; i++){
+                suma += i*i*i
+                if(i > maks){
+                    maks = i;
+                }
+            }
+            return [suma, maks];
+        }
+        let wynik = sumaSzescianow(1, 3);
+        document.write(wynik + "<br>");
+
+        document.write(sumaSzescianow(1, 100))
+
+    </script>
+
+
+</head>
+
+
+
+<body>
+</body>
+</html>

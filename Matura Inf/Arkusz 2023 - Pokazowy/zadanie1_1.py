@@ -43,3 +43,5 @@ for plansza in lista_plansz:
         maxPusteKolumny = pusteKolumny
                 
 print(pustePlansze, maxPusteKolumny)
+with open('wyniki/zadanie1_3.txt', 'w') as f:
+    f.write(f"{pustePlansze} {maxPusteKolumny}")

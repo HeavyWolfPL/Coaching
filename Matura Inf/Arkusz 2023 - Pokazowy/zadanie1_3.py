@@ -55,7 +55,8 @@ for plansza in lista_plansz:
             osPlanszy = 'y'
             wieza = 1
 
-        if czarnaWieza2 != []:
+        # TODO: Zamiast deklarować wieza = 2, zmieńmy po prostu wartość czarnaWieza1
+        if (czarnaWieza2 != []) and (osPlanszy == 0):
             if bialyKrol[0] == czarnaWieza2[0]:
                 osPlanszy = 'x'
                 wieza = 2
@@ -103,7 +104,7 @@ for plansza in lista_plansz:
             osPlanszy = 'y'
             wieza = 1
 
-        if bialaWieza2 != []:
+        if bialaWieza2 != [] and (osPlanszy == 0):
             if czarnyKrol[0] == bialaWieza2[0]:
                 osPlanszy = 'x'
                 wieza = 2

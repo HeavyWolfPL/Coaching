@@ -1,5 +1,5 @@
-# Zadanie dodatkowe
-## Tablice i Operacje na plikach
+# Zadanie dodatkowe nr. 1
+## Tablice i Operacje na plikach 
 
 ## Informacja
 > Arkusz zawiera instrukcję w dwóch postaciach dla zadania. Treść zadania znajduje się w pliku PDF.

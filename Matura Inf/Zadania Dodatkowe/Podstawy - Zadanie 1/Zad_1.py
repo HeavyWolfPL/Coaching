@@ -121,7 +121,6 @@ with open("rna.txt", "r") as rna_file:
 
 # Generowanie sekwencji DNA na podstawie sekwencji RNA
 for i, sequence in enumerate(rna_sequences):
-    rna_to_dna(sequence)
     dna_sequences[i] = rna_to_dna(sequence)
 
 # Zapis sekwencji DNA do pliku dna_nowe.txt

@@ -17,7 +17,7 @@ with open("zalaczniki/szachy.txt") as plik:
         i += 1
         plansza_pojedyncza.append(linia)
     lista_plansz.append(plansza_pojedyncza)
-
+ # DEBUG
 pustePlansze = 0
 maxPusteKolumny = 0
 

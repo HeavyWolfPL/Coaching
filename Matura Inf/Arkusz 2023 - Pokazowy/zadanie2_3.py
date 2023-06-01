@@ -1,4 +1,8 @@
-# Dane
+# Zadziałają nam tablice:
+# A = [1,2,3,6,12,24,48,96,192] # Dodawanie poprzednich liczb do siebie
+# A = [1,2,3,5,8,13,21,34,55,89] # fibonacci
+# A = [1,2,3,4,10,20,40,80,40] # Zapełni każde miejsce w tablicy
+# A = [1,2,4,8,16,32,64,128]
 
 # Funkcja
 def Tura(k, A, B, s):

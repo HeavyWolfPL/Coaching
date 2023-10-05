@@ -1,14 +1,10 @@
-# def decimalToBin(n):
-#     return bin(n)[2:]
-
 def decimalToBin(n):
+    n = int(n)
     binarna = ''
     while n > 0:
         binarna = str(n % 2) + binarna
         n //= 2
     return binarna
-
-print(decimalToBin(67))
 
 def funkcja(n):
     blok = ''
@@ -17,29 +13,27 @@ def funkcja(n):
     for i, x in enumerate(n):
         x = int(x)
 
-        # I sposób
-        # if x == 0 and blok != '':
-        #     lista.append(blok)
-        #     blok = ''
-        # elif x == 1:
-        #     blok = str(blok) + str(x)
-
-        # II sposób
-        if n[i] != n[i-1]:
+        if n[i] != n[i-1] and blok != '':
             lista.append(blok)
             blok = ''
             blok = str(blok) + str(x)
-        elif n[i] == n[i-1]:
+        else:
             blok = str(blok) + str(x)
 
     if blok != '':
         lista.append(blok)
     return lista
-
-wynik = funkcja(decimalToBin(67))
-
-print(wynik)
-
-print(len(wynik))
     
+plik = open(file='Dane_2305/bin.txt', mode='r')
+dane = plik.readlines()
+najwieksza = 0
+najwieksza_liczba = 0
+
+for liczba in dane:
+    if int(liczba) > najwieksza:
+        najwieksza = int(liczba)
+
+print(najwieksza)
+
+
 

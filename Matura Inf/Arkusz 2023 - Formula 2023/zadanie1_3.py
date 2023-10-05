@@ -1,8 +1,5 @@
 temp = []
-
 # Nie działa, podaje inne odpowiedzi. Czyżby matura była błędna?
-
-
 
 # def A(B, i, j):
 #     temp.append(B[i][j])
